@@ -1,0 +1,21 @@
+= link_to t('login.facebook'), '#/', class: 'show_fb_form'
+= link_to t('login.email'), '#/', class: 'show_email_form'
+
+
+= form_for :user, html: { class: 'hidden', id: 'new_fb'} do |f|
+  = f.phone_field :mobile_phone, class: 'phone'
+  = f.submit
+
+
+
+
+= form_for User.new, html: { class: 'hidden', id: 'new_email'} do |f|
+  = f.label :name
+  = f.text_field :name
+  = f.label :email
+  = f.text_field :email
+  = f.label :mobile_phone
+  = f.phone_field :mobile_phone, class: 'phone'
+  = f.label :avatar
+  = f.file_field :avatar
+  = f.submit 

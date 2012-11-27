@@ -9,6 +9,7 @@ gem 'omniauth-facebook'
 gem 'slim-rails'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'valid_email'
 
 group :development, :test do
   gem 'rspec-rails'

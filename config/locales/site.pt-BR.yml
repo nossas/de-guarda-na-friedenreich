@@ -1,0 +1,8 @@
+pt-BR:
+  site:
+    title: "De guarda na Escola!"
+  login: 
+    facebook: "Participar usando o facebook"
+    email: "Participar usando email"
+  actions:
+    back_home: "Voltar ao início"

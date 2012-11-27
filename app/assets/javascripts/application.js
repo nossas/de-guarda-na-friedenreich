@@ -12,4 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require ./lib/jquery.inputmask
+//= require_tree ./lib
 //= require_tree .
