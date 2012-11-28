@@ -7,11 +7,9 @@ html
     /[if IE] 
       = javascript_include_tag "http://html5shiv.googlecode.com/svn/trunk/html5.js"
   body
-    section.login
+    header
       = render 'layouts/login'
-    header.container.logo  
-      = render 'layouts/logo'
-    section.container role='main'
+    section.content role='main'
       = yield
     footer
     = javascript_include_tag :application

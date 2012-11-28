@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121127182608) do
+ActiveRecord::Schema.define(:version => 20121128023707) do
 
   create_table "users", :force => true do |t|
     t.string   "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20121127182608) do
     t.datetime "updated_at",   :null => false
     t.string   "uid"
     t.string   "avatar"
+    t.string   "file"
   end
 
 end

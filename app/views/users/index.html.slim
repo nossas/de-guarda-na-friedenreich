@@ -1,21 +1,64 @@
-= link_to t('login.facebook'), '#/', class: 'show_fb_form'
-= link_to t('login.email'), '#/', class: 'show_email_form'
+.container.call_to
+  .row
+    article.call_to_action
+      .content
+        h1
+          | Os pais e alunos da Escola Municipal Friedenreich precisam de você para manter a escola de pé!
+        p
+          | O Governo e a Prefeitura do Rio querem derrubar a Escola Municipal Friedenreich a qualquer custo e ainda não deram aos pais nenhuma garantia legal de que seus filhos poderão continuar na escola com segurança. 
+        p
+          | Vamos formar uma legião de guardiões para proteger a Friedenreich ao primeiro sinal de demolição.
+      .actions
+        - if current_user
+          h2 
+            | Obrigado por participar, #{current_user.name}!
+        - else
+          = link_to image_tag('bt_fb.png'), '#new_fb', class: 'show_form show_fb_form', rel: 'modal'
+          = link_to image_tag('bt_email.png'), '#new_email', class: 'show_form show_email_form', rel: 'modal'
 
+    .form
+      .hidden.fb
+        = form_for :user, html: { id: 'new_fb'} do |f|
+          label
+            | Insira seu celular
+          = f.phone_field :phone, class: 'phone'
+          = f.submit
 
-= form_for :user, html: { class: 'hidden', id: 'new_fb'} do |f|
-  = f.phone_field :mobile_phone, class: 'phone'
-  = f.submit
+      .hidden.email
+        = form_for User.new, html: { id: 'new_email'} do |f|
+          label
+            | Nome
+            = f.text_field :name
+          label
+            | E-mail
+            = f.text_field :email
+          label
+            | Celular
+            = f.phone_field :mobile_phone, class: 'phone'
+          label 
+            | Imagem de perfil
+            = f.file_field :file
+          = f.submit 
+.container.streaming
+  .row
+    .content
+      h2
+        | Friedenreich: Vigilância 24h
+      p
+        | Montamos uma base que traz imagens da escola em tempo real, 24 horas por dia, 7 dias por semana. Acesse esta página sempre que tiver um tempo livre e se você notar algo suspeito, aperte o botão abaixo e alerte os guardiões da Friedenreich.
+    .kids
+      .video
+        iframe src="http://player.vimeo.com/video/52173464?title=0&amp;byline=0&amp;portrait=0&amp;badge=0" 
+        .actions= link_to image_tag('bt_convocar.png'), "#/"
 
+.container.army
+  .row
+    .content
+      h2 
+        | Este é o nosso muro de guardiões
+      p
+        | Estamos de prontidão! Se a Prefeitura e o Governo resolverem demolir a Friedenreich sem aviso prévio, o Meu Rio enviará um SMS para todos os guardiões convocando-os para uma mobilização na própria escola. Nenhum trator se aproximará da escola enquanto o Governo e a Prefeitura não garantirem legalmente um destino adequado para os alunos da Friedenreich. 
 
-
-
-= form_for User.new, html: { class: 'hidden', id: 'new_email'} do |f|
-  = f.label :name
-  = f.text_field :name
-  = f.label :email
-  = f.text_field :email
-  = f.label :mobile_phone
-  = f.phone_field :mobile_phone, class: 'phone'
-  = f.label :avatar
-  = f.file_field :avatar
-  = f.submit 
+      ul
+        - @users.each do |user|
+          li= image_tag(user.avatar || user.file.url, size: '50x50', title: user.name)

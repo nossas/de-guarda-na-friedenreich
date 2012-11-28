@@ -210,5 +210,5 @@ pt-BR:
         name: "Nome Completo"
         mobile_phone: "Celular"
         email: "E-mail"
-        avatar: "Imagem de Perfil"
+        file: "Imagem de Perfil"
 

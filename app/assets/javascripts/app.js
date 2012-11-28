@@ -36,22 +36,10 @@ var initialize = function(){
   $('.phone').inputmask('(99) 9999-9999');
 }
 
-var showPhoneForm = function(){
-  $('form#new_email').hide();
-  $('form#new_fb').fadeToggle();
-};
-
-var showForm = function(){
-  $('form#new_fb').hide();
-  $('form#new_email').fadeToggle();
-};
-
-
 
 initialize();
 initializeSocial();
 
-$('a.show_email_form').on('click', function() { showForm() });
-$('a.show_fb_form').on('click',    function() { showPhoneForm() });
+$('*[rel="modal"]').colorbox({inline: true, width: '30%', arrowKey: false});
 
 

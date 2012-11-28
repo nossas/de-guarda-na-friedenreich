@@ -1,8 +1,9 @@
-$columnal-grid-width: 960px !default
+$columnal-grid-width: 970px !default
 @import compass/reset
 @import compass/css3
 @import columnal/grid
-
+@import colorbox
+@import fonts
 
 .container
   +grid-container
@@ -11,36 +12,117 @@ $columnal-grid-width: 960px !default
 .hidden
   display: none
 
+iframe
+  display: block
+  width: 80%
+  margin: 0 auto
+
+
+body
+  background: image-url('pattern.jpg')
+  font-family: "Proxima Nova", "Tahoma"
+p
+  line-height: 1.4em
+  font-size: .9em
+  width: 85%
+  margin: 0 auto
+
+h1, h2
+  font-family: "Populaire"
+  font-size: 4em
+  padding: .4em 0
+
+h2
+  font-size: 2em
+
 
 // Login bar
-
-section.login, header.logo
+header
   background: white
   padding-top: .25em
   padding-bottom: .25em
   line-height: 40px
   color: lighten(gray, 10%)
   font-size: .8em
-  margin-bottom: 2em
-  +box-shadow(lighten(gray, 15%) 0 0 20px)
+  position: relative
+  +box-shadow(0 1px 6px gray)
   img
     float: left
-    margin-left: -4px
-  .login
-    float: right
-    a
-      display: inline-block
-      text-decoration: none
-      font-size: 1.5em
-      color: #4b64a6
-      vertical-align: middle
-      margin-left: .25em
-  .user_name_and_avatar
-    text-align: right
-    font-weight: bold
-    img
-      width: 30px
-      float: right
-      margin-top: 5px
-      margin-left: 1em
+    margin: 0
+    padding: .4em
 
+
+// Show form buttons
+a.show_form
+  display: inline-block
+  +transition(.2s)
+  &:first-child
+    margin: .5em 2.1em 0 11em
+  &.show_fb_form
+    position: relative
+    top: 2px
+  &:hover
+    opacity: .85
+
+
+form
+  label 
+    background: white
+    padding: .8em
+    display: block
+    margin: .4em
+  input[type='text']
+    margin-left: .6em
+    padding: .4em
+
+.call, .streaming, .army
+  text-align: center
+  h2
+    padding-top: 1em
+
+article.call_to_action
+  background: image-url('bg.png') center top no-repeat
+
+article.call_to_action
+  .content
+    min-height: 4em 
+    text-align: center
+  .actions
+    h2
+      text-align: center
+      color: white
+      font-size: 2.5em
+    padding: 3em 0
+    background: image-url('kids-top.png') no-repeat center bottom
+
+.streaming
+  background: image-url('pattern2.jpg')
+  p
+    color: white
+  .kids
+    background: image-url('kids.png') no-repeat center
+  .video
+    padding: 4em 0 0 0
+    background: image-url('green-grass.png') no-repeat center bottom
+    iframe
+      height: 400px
+      margin-bottom: 1em
+    .actions
+      width: 30%
+      margin: 0 auto
+      padding: .5em 0
+
+.army
+  background: image-url('bg_army.png') center top no-repeat
+  .content
+    height: 55em
+  ul
+    width: 45%
+    margin: 0 auto
+    margin-top: 1.5em
+    text-align: left
+    li
+      display: inline-block
+      margin: .2em 1em
+      img
+        border: 2px solid black
