@@ -19,13 +19,20 @@
     .form
       .hidden.fb
         = form_for :user, html: { id: 'new_fb'} do |f|
+          h3 
+            | Insira seu celular, assim te avisamos por SMS quando qualquer coisa acontecer com a escola
+
           label
             | Insira seu celular
-          = f.phone_field :phone, class: 'phone'
-          = f.submit
-
+            = f.phone_field :phone, class: 'phone'
+          p
+            = image_submit_tag "bt_submit_fb.png", class: 'sbmt'
+          p &nbsp;
       .hidden.email
         = form_for User.new, html: { id: 'new_email'} do |f|
+          h3 
+            | Insira seu celular, assim te avisamos por SMS quando qualquer coisa acontecer com a escola
+
           label
             | Nome
             = f.text_field :name
@@ -36,9 +43,13 @@
             | Celular
             = f.phone_field :mobile_phone, class: 'phone'
           label 
-            | Imagem de perfil
+            | Avatar
             = f.file_field :file
-          = f.submit 
+          p
+            = image_submit_tag "bt_submit_email.png", class: 'sbmt'
+          p &nbsp;
+          p &nbsp;
+
 .container.streaming
   .row
     .content
@@ -48,7 +59,7 @@
         | Montamos uma base que traz imagens da escola em tempo real, 24 horas por dia, 7 dias por semana. Acesse esta página sempre que tiver um tempo livre e se você notar algo suspeito, aperte o botão abaixo e alerte os guardiões da Friedenreich.
     .kids
       .video
-        iframe src="http://cdn.livestream.com/embed/meurio?layout=4&amp;height=400&amp;width=700&amp;autoplay=false" 
+        iframe src="http://cdn.livestream.com/embed/meurio?layout=4&amp;height=400&amp;width=700&amp;autoplay=false" height="400"
         .actions= link_to image_tag('bt_convocar.png'), "#/"
 
 .container.army
@@ -58,7 +69,7 @@
         | Este é o nosso muro de guardiões
       p
         | Estamos de prontidão! Se a Prefeitura e o Governo resolverem demolir a Friedenreich sem aviso prévio, o Meu Rio enviará um SMS para todos os guardiões convocando-os para uma mobilização na própria escola. Nenhum trator se aproximará da escola enquanto o Governo e a Prefeitura não garantirem legalmente um destino adequado para os alunos da Friedenreich. 
-
+    .users
       ul
-        - @users.each do |user|
+        - @users.limit(60).each_with_index do |user, index|
           li= image_tag(user.avatar || user.file.url, size: '50x50', title: user.name)

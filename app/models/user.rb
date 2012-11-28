@@ -9,5 +9,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :mobile_phone, :name, :avatar, :file
 
 
+  default_scope order('created_at DESC')
   mount_uploader :file, AvatarUploader
+
 end
