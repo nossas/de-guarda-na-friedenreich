@@ -15,3 +15,26 @@
 //= require ./lib/jquery.inputmask
 //= require_tree ./lib
 //= require_tree .
+
+$(function(){
+  $("form.new_user").validate({
+    rules: {
+    "user[name]": "required",
+    "user[email]": {
+      required: true,
+      email: true
+    },
+    "user[mobile_phone]": "required",
+    "user[file]": "required"
+  },
+  messages: {
+     "user[name]": "Todo herói merece um nome, qual o seu?",
+     "user[email]": {
+       required: "E se precisarmos entrar em contato? Precisamos do seu email.",
+       email: "E se precisarmos entrar em contato? Precisamos de um email válido."
+     },
+     "user[mobile_phone]": "Caso comecem a demolição da escola vamos precisar entrar em contato com você bem rápido! Seu celular é indispensável.",
+     "user[file]": "Temos certeza que você ficará bem em nosso mural, por favor escolha uma foto."
+   }
+  });
+});
