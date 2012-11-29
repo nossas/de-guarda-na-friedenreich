@@ -13,7 +13,7 @@
           | O Governo e a Prefeitura do Rio querem derrubar a Escola Municipal Friedenreich a qualquer custo e ainda não deram aos pais nenhuma garantia legal de que seus filhos poderão continuar na escola com segurança. 
         p
           | Vamos formar uma legião de guardiões para proteger a Friedenreich ao primeiro sinal de demolição.
-      .actions
+      .actions#actions
         - if current_user
           h2 
             | Obrigado por participar, #{current_user.name}!
@@ -70,7 +70,7 @@
     .kids
       .video
         iframe src="http://cdn.livestream.com/embed/meurio?layout=4&amp;height=400&amp;width=700&amp;autoplay=false" height="400" width="700"
-        .actions= link_to image_tag('bt_convocar.png'), "#/"
+        .actions= link_to image_tag('bt_convocar.png'), "#{current_user ? '/notify' : '#actions'}"
 
 .container.army
   .row

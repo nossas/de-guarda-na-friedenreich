@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true
   validates :mobile_phone, length: { in: 8..14 }
 
-  validates_uniqueness_of :email, :mobile_phone
+  validates_uniqueness_of :email
   attr_accessible :email, :mobile_phone, :name, :avatar, :file
 
 

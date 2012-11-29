@@ -19,4 +19,10 @@ class UsersController < ApplicationController
       redirect_to facebook_auth_path
     end
   end
+
+
+  def notify
+    UserMailer.notify_from(current_user).deliver
+    redirect_to root_path
+  end
 end
