@@ -12,19 +12,24 @@
         - if current_user
           h2 
             | Obrigado por participar, #{current_user.name}!
+          p.congrats
+            | Compartilhe para que mais pessoas se alistem também!
+
+          = render 'share'
         - else
           = link_to image_tag('bt_fb.png'), '#new_fb', class: 'show_form show_fb_form', rel: 'modal'
           = link_to image_tag('bt_email.png'), '#new_email', class: 'show_form show_email_form', rel: 'modal'
 
     .form
       .hidden.fb
-        = form_for :user, html: { id: 'new_fb'} do |f|
+        = form_for :user, html: { id: 'new_fb', class: 'new_fb'} do |f|
           h3 
             | Insira seu celular, assim te avisamos por SMS quando qualquer coisa acontecer com a escola
 
           label
             | Insira seu celular
             = f.phone_field :phone, class: 'phone'
+          p &nbsp;
           p
             = image_submit_tag "bt_submit_fb.png", class: 'sbmt'
           p &nbsp;
@@ -43,11 +48,12 @@
             | Celular
             = f.phone_field :mobile_phone, class: 'phone'
           label 
-            | Avatar
+            | Image 
             = f.file_field :file
+
+          p &nbsp;
           p
             = image_submit_tag "bt_submit_email.png", class: 'sbmt'
-          p &nbsp;
           p &nbsp;
 
 .container.streaming

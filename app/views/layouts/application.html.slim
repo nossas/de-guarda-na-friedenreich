@@ -5,6 +5,13 @@ html
     = stylesheet_link_tag :application, media: :all
     = favicon_link_tag 'favicon.ico'
     = csrf_meta_tags
+    meta[name='description' content="Montamos uma base que traz imagens da escola em tempo real, 24 horas por dia, 7 dias por semana. Acesse esta página sempre que tiver um tempo livre e se você notar algo suspeito, aperte o botão abaixo e alerte os guardiões da Friedenreich."]
+    meta[name='keywords' content='meurio, friedenreich, demolição, alerta, rio de janeiro, escola']
+    meta[property="og:title" content="Clique aqui para se tornar um guardião da Friedenreich"]
+    meta[property="og:description" content="os guardiões da Friedenreich serão alertados por SMS caso o governo mande tratores para demolir a décima melhor escola do país."]
+    meta[property="og:image" content="http://i.imgur.com/oyYRb.png"]
+    meta[property="og:url" content="http://deguarda.meurio.org.br"]
+
     /[if IE] 
       = javascript_include_tag "http://html5shiv.googlecode.com/svn/trunk/html5.js"
   body
