@@ -9,7 +9,15 @@ class User < ActiveRecord::Base
   attr_accessible :email, :mobile_phone, :name, :avatar, :file
 
 
-  default_scope order('created_at DESC')
+  default_scope order('RANDOM()')
   mount_uploader :file, AvatarUploader
 
+
+  def as_json(options = {})
+    { 
+      id: self.id,
+      name: self.name,
+      avatar: self.avatar || self.file.url
+    }
+  end
 end

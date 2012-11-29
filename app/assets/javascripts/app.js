@@ -25,6 +25,8 @@ var initializeSocial = function(){
 var initialize = function(){
   $('.phone').inputmask('(99) 9999-9999');
   $('*[rel="modal"]').colorbox({inline: true, width: '30%', height: 'auto', arrowKey: false});
+  $('*[rel="modal_iframe"]').colorbox({width: '30%', height: '60%', arrowKey: false});
+
    $("form.new_user").validate({
       rules: {
         "user[name]": "required",

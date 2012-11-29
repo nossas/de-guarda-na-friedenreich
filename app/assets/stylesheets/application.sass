@@ -148,7 +148,7 @@ form
     padding-top: 1em
 
 article.call_to_action
-  background: image-url('bg.png') center top no-repeat
+  background: image-url('bg.jpg') center top no-repeat
 
 article.call_to_action
   h1
@@ -193,10 +193,23 @@ article.call_to_action
       width: 30%
       margin: 0 auto
       padding: .5em 0
+      padding-bottom: 0
+      &:hover
+        opacity: .8
+    span.info
+      font-size: .7em
+      display: block
+      width: 60%
+      margin: 0 auto
+      margin-top: -.5em
+      padding-bottom: .8em
+      color: lighten(gray, 45%)
+      font-style: italic
+      +text-shadow(1px 1px 2px black)
+      
 
 .army
-
-  background: image-url('bg.png') center top repeat-y 
+  background: image-url('bg.jpg') center top no-repeat
   .content
     height: 7em
   .users
@@ -211,5 +224,24 @@ article.call_to_action
     li
       display: inline-block
       margin: .2em 1em .2em .9em
+      .name
+        display: none
       img
         border: 2px solid black
+
+body.list
+  li
+    display: block
+    overflow: hidden
+    width: 100%
+    margin: .6em 0
+    background: white
+    +box-shadow(0 1px 6px lightgray)
+    .image
+      float: left
+      margin: 1em .4em
+      margin-bottom: 0em
+      img
+        +border-radius(40px)
+    .name
+      line-height: 5.5em

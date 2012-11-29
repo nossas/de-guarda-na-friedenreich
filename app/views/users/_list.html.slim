@@ -1,0 +1,5 @@
+ul.list
+  - @users.each_with_index do |user, index|
+    li
+      .image= image_tag(user.avatar || user.file.url, size: '50x50', title: user.name)
+      .name= user.name

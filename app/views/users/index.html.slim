@@ -70,7 +70,11 @@
     .kids
       .video
         iframe src="http://cdn.livestream.com/embed/meurio?layout=4&amp;height=400&amp;width=700&amp;autoplay=false" height="400" width="700"
-        .actions= link_to image_tag('bt_convocar.png'), "#{current_user ? '/notify' : '#actions'}"
+        .actions= link_to image_tag('bt_convocar.png'), "#{current_user ? notify_path : '#actions'}"
+        span.info
+          |Ao apertar o botão, o Meu Rio vai correr pra checar a informação. 
+        span.info
+          | Caso a escola esteja mesmo em perigo avisaremos a todos!
 
 .container.army
   .row
@@ -80,6 +84,5 @@
       p
         | Estamos de prontidão! Se a Prefeitura e o Governo resolverem demolir a Friedenreich sem aviso prévio, o Meu Rio enviará um SMS para todos os guardiões convocando-os para uma mobilização na própria escola. Nenhum trator se aproximará da escola enquanto o Governo e a Prefeitura não garantirem legalmente um destino adequado para os alunos da Friedenreich. 
     .users
-      ul
-        - @users.limit(60).each_with_index do |user, index|
-          li= image_tag(user.avatar || user.file.url, size: '50x50', title: user.name)
+      = link_to "Ver todos os guardiões", list_url, rel: 'modal_iframe', class: 'see_all'
+      = render 'list'
