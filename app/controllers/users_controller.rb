@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_filter :redirect_to_auth
 
   def new
-    new! { redirect_to root_path } 
+    new! { root_path } 
   end
 
   def create
