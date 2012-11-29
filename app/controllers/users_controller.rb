@@ -4,11 +4,12 @@ class UsersController < ApplicationController
   before_filter :redirect_to_auth
 
   def new
-    new! { return render :index } 
+    new! { redirect_to root_path } 
   end
 
   def create
-    @user = User.find_or_create_by_email(params[:user])
+    @user = User.find_or_create_by_email(params[:user][:email]) || User.create(params[:user])
+    self.current_user = @user
     create!
   end
 
