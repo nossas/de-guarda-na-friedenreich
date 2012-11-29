@@ -206,11 +206,11 @@ article.call_to_action
     height: 7em
   .users
     padding: 8em 0 0 0
+    padding-bottom: 1em
     background: image-url('bg_army_bottom.png') center bottom no-repeat
   ul
     width: 35%
     margin: 0 auto
-    padding-bottom: 1.5em
     text-align: left
     vertical-align: bottom
     li
@@ -237,7 +237,18 @@ ul.list
         +border-radius(40px)
     .name
       line-height: 5.5em
-
+      text-transform: capitalize
+.see_all
+  color: white
+  font-weight: bold
+  letter-spacing: 1px
+  padding-bottom: 1em
+  margin-bottom: 1em
+  text-transform: uppercase
+  font-size: .9em
+  &:hover
+    text-decoration: none
+    color: orange
 .new_fb
   label
     display: block
