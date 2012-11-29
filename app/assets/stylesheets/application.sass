@@ -81,30 +81,22 @@ a.show_form
     opacity: .85
 
 .counter
-  background: image-url('counter.png') right 10px no-repeat
-  font-size: 4em
-  +grid-prefix(4)
-.counter, .counter_text
-  +grid(3)
-  width: 30%
-  margin: 0 auto
-  color: white
-  height: 80px
-  line-height: 4em
-  p
-    margin-right: 1.8em
-    font-size: .5em
-    margin-top: .7em
+  span
+    font-family: Lucida Console, monospace
+    display: inline-block
+    background: image-url('counter.png') right 10px no-repeat
+    font-size: 42px
+    width: 235px
+    height: 40px
+    padding-right: 60px
+    padding-top: 41px
     text-align: right
-    letter-spacing: 7px
-  h3
-    font-size: 1.8em
-    text-align: left
-    color: white 
-    margin-left: -.7em
-.counter_text
-  +grid(4)
-  +last
+    letter-spacing: 2px
+    line-height: 0
+    color: white
+
+h3
+  color: white
 
 form
   padding: .4em
