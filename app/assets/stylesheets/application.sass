@@ -27,13 +27,16 @@ p
   width: 85%
   margin: 0 auto
 
-h1, h2
+h1, h2, h3
   font-family: "Populaire"
   font-size: 4em
   padding: .4em 0
 
 h2
-  font-size: 2em
+  font-size: 3em
+
+h3
+  font-size: 1.6em
 
 a
   outline: none
@@ -52,6 +55,15 @@ header
     float: left
     margin: 0
     padding: .4em
+.share
+  float: right
+  .fb-like, .tw-like
+    display: inline
+    position: relative
+    top: .9em
+    margin-left: .8em
+  .fb-like
+    top: .6em
 
 
 // Show form buttons
@@ -68,14 +80,40 @@ a.show_form
 
 
 form
+  padding: .4em
+  h3
+    margin-bottom: .8em
   label 
-    background: white
+    background: lighten(gray, 45%) 
+    width: 100%
     padding: .8em
-    display: block
-    margin: .4em
-  input[type='text']
-    margin-left: .6em
+    margin: .8em 0
+    width: 93%
+    &.error
+      font-size: .7em
+      color: red
+      padding: 0
+      margin: .2em 0
+      display: block
+      text-align: center
+  input[type='text'], input[type='tel']
+    margin-left: 1em
     padding: .4em
+    width: 55% !important
+  input.sbmt
+    display: block
+    margin: 2em auto
+    margin-bottom: 0 
+    +transition(.2s)
+    &:hover
+      opacity: .8
+  &#new_email
+    label
+      display: block
+    input[type='text'], input[type='tel'], input[type='file']
+      margin-left: 1em
+      padding: .4em
+      width: 70% !important   
 
 .call, .streaming, .army
   text-align: center
@@ -89,6 +127,16 @@ article.call_to_action
   .content
     min-height: 4em 
     text-align: center
+  .congrats
+    text-align: center
+    margin-top: -1.5em
+    color: white
+  .share
+    float: none
+    width: 25% !important
+    margin: .5em auto
+    .fb-like, .tw-like
+      display: inline
   .actions
     h2
       text-align: center
@@ -115,16 +163,21 @@ article.call_to_action
       padding: .5em 0
 
 .army
-  background: image-url('bg_army.png') center top no-repeat
+
+  background: image-url('bg.png') center top repeat-y 
   .content
-    height: 55em
+    height: 7em
+  .users
+    padding: 8em 0 0 0
+    background: image-url('bg_army_bottom.png') center bottom no-repeat
   ul
-    width: 45%
+    width: 35%
     margin: 0 auto
-    margin-top: 1.5em
+    padding-bottom: 1.5em
     text-align: left
+    vertical-align: bottom
     li
       display: inline-block
-      margin: .2em 1em
+      margin: .2em 1em .2em .9em
       img
         border: 2px solid black

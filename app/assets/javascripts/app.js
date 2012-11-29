@@ -34,12 +34,12 @@ var initializeSocial = function(){
 
 var initialize = function(){
   $('.phone').inputmask('(99) 9999-9999');
+  $('*[rel="modal"]').colorbox({inline: true, width: '30%', height: 'auto', arrowKey: false});
 }
 
 
 initialize();
 initializeSocial();
 
-$('*[rel="modal"]').colorbox({inline: true, width: '30%', arrowKey: false});
 
 

@@ -98,7 +98,7 @@
   background: image-url('colorbox/border.png') 0 -29px repeat-x
 
 #cboxContent
-  background: #fff
+  background: lighten(gray, 35%)
   overflow: hidden
 
 .cboxIframe
@@ -110,7 +110,7 @@
 
 #cboxLoadedContent
   margin-bottom: 28px
-  background: lighten(gray, 20%)
+  background: lighten(gray, 35%)
 
 #cboxTitle
   position: absolute
@@ -119,12 +119,14 @@
   text-align: center
   width: 100%
   color: #949494
+  display: none !important
 
 #cboxCurrent
   position: absolute
   bottom: 4px
   left: 58px
   color: #949494
+  display: none !important
 
 #cboxSlideshow
   position: absolute
@@ -139,6 +141,7 @@
   background: image-url('colorbox/controls.png') no-repeat -75px 0
   width: 25px
   height: 25px
+  display: none !important
   text-indent: -9999px
   &:hover
     background-position: -75px -25px
@@ -149,6 +152,7 @@
   left: 27px
   background: image-url('colorbox/controls.png') no-repeat -50px 0
   width: 25px
+  display: none !important
   height: 25px
   text-indent: -9999px
   &:hover
