@@ -2,6 +2,11 @@
   .row
     article.call_to_action
       .content
+        .counter
+          p= User.count.to_s.rjust(3, '0') 
+        .counter_text
+          h3 
+            | Guardiões em alerta
         h1
           | Os pais e alunos da Escola Municipal Friedenreich precisam de você para manter a escola de pé!
         p

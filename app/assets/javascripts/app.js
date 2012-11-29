@@ -40,6 +40,3 @@ var initialize = function(){
 
 initialize();
 initializeSocial();
-
-
-
