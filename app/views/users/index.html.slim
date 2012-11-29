@@ -19,7 +19,6 @@
             | Obrigado por participar, #{current_user.name}!
           p.congrats
             | Compartilhe para que mais pessoas se alistem também!
-
           = render 'share'
         - else
           = link_to image_tag('bt_fb.png'), '#new_fb', class: 'show_form show_fb_form', rel: 'modal'

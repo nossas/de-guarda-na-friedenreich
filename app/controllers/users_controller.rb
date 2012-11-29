@@ -7,7 +7,10 @@ class UsersController < ApplicationController
     new! { return render :index } 
   end
 
-
+  def create
+    @user = User.find_or_create_by_email(params[:user])
+    create!
+  end
 
   def redirect_to_auth
     if params[:user] and !params[:user][:phone].nil?
