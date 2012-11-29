@@ -25,18 +25,6 @@
           = link_to image_tag('bt_email.png'), '#new_email', class: 'show_form show_email_form', rel: 'modal'
 
     .form
-      .hidden.fb
-        = form_for :user, html: { id: 'new_fb', class: 'new_fb'} do |f|
-          h3 
-            | Insira seu celular, assim te avisamos por SMS quando qualquer coisa acontecer com a escola
-
-          label
-            | Insira seu celular
-            = f.phone_field :phone, class: 'phone'
-          p &nbsp;
-          p
-            = image_submit_tag "bt_submit_fb.png", class: 'sbmt'
-          p &nbsp;
       .hidden.email
         = form_for User.new, html: { id: 'new_email'} do |f|
           h3 
