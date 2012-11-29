@@ -1,3 +1,4 @@
+# coding: utf-8
 class SessionsController < ApplicationController
   def create
     if auth_hash
@@ -7,7 +8,8 @@ class SessionsController < ApplicationController
       self.current_user = User.find_or_create_by_email(params[:user])
     end
 
-
+    Koala::Facebook::API.new(hash[:credentials][:token]).put_connections("me", "links", :link => "http://deguarda.meurio.org.br/", :message => "Acabo de me tornar um guardião da Friedenreich: Seja um você também!")
+      
     return redirect_to root_path
   end
 
