@@ -83,4 +83,8 @@
         | Estamos de prontidão! Se a Prefeitura e o Governo resolverem demolir a Friedenreich sem aviso prévio, o Meu Rio enviará um SMS para todos os guardiões convocando-os para uma mobilização na própria escola. Nenhum trator se aproximará da escola enquanto o Governo e a Prefeitura não garantirem legalmente um destino adequado para os alunos da Friedenreich. 
     .users
       = link_to "Ver todos os guardiões", list_url, rel: 'modal_iframe', class: 'see_all'
-      = render 'list'
+      ul
+        - @users.each_with_index do |user, index|
+          li
+            .image= image_tag(user.avatar || user.file.url, size: '50x50', title: user.name)
+            .name= user.name

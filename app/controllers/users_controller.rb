@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 
 
   def list
-    @users = User.find(:all)
-    return render 'list'
+    @users = User.all
+    return render partial: 'list'
   end
 end
