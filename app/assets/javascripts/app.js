@@ -4,7 +4,7 @@ var initializeSocial = function(){
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
     js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=392681980810591";
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=301170913317565";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 
@@ -19,22 +19,40 @@ var initializeSocial = function(){
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   })();
 
-  // Google analytics
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-26278513-10']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
 }
 
 
 var initialize = function(){
   $('.phone').inputmask('(99) 9999-9999');
   $('*[rel="modal"]').colorbox({inline: true, width: '30%', height: 'auto', arrowKey: false});
+   $("form.new_user").validate({
+      rules: {
+        "user[name]": "required",
+        "user[email]": {
+          required: true,
+          email: true
+        },
+        "user[mobile_phone]": "required",
+      },
+      messages: {
+        "user[name]": "Todo herói merece um nome, qual o seu?",
+        "user[email]": {
+          required: "E se precisarmos entrar em contato? Precisamos do seu email.",
+          email: "E se precisarmos entrar em contato? Precisamos de um email válido."
+        },
+        "user[mobile_phone]": "Caso comecem a demolição da escola vamos precisar entrar em contato com você bem rápido! Seu celular é indispensável."
+      }
+    });
+
+    $('form.new_fb').validate({
+      rules: {
+        'user[phone]': 'required'
+      },
+      messages: {
+        "user[phone]": "Caso comecem a demolição da escola vamos precisar entrar em contato com você bem rápido! Seu celular é indispensável.",
+      }
+    });
+
 }
 
 

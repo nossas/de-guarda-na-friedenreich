@@ -13,7 +13,7 @@
           | O Governo e a Prefeitura do Rio querem derrubar a Escola Municipal Friedenreich a qualquer custo e ainda não deram aos pais nenhuma garantia legal de que seus filhos poderão continuar na escola com segurança. 
         p
           | Vamos formar uma legião de guardiões para proteger a Friedenreich ao primeiro sinal de demolição.
-      .actions#actions
+      .actions
         - if current_user
           h2 
             | Obrigado por participar, #{current_user.name}!
@@ -25,18 +25,6 @@
           = link_to image_tag('bt_email.png'), '#new_email', class: 'show_form show_email_form', rel: 'modal'
 
     .form
-      .hidden.fb
-        = form_for :user, html: { id: 'new_fb', class: 'new_fb'} do |f|
-          h3 
-            | Insira seu celular, assim te avisamos por SMS quando qualquer coisa acontecer com a escola
-
-          label
-            | Insira seu celular
-            = f.phone_field :phone, class: 'phone'
-          p &nbsp;
-          p
-            = image_submit_tag "bt_submit_fb.png", class: 'sbmt'
-          p &nbsp;
       .hidden.email
         = form_for User.new, html: { id: 'new_email'} do |f|
           h3 
@@ -70,7 +58,7 @@
     .kids
       .video
         iframe src="http://cdn.livestream.com/embed/meurio?layout=4&amp;height=400&amp;width=700&amp;autoplay=false" height="400" width="700"
-        .actions= link_to image_tag('bt_convocar.png'), "#{current_user ? '/notify' : '#actions'}"
+        .actions= link_to image_tag('bt_convocar.png'), "#/"
 
 .container.army
   .row
