@@ -68,7 +68,18 @@
     .kids
       .video
         iframe src="http://cdn.livestream.com/embed/meurio?layout=4&amp;height=400&amp;width=700&amp;autoplay=false" height="400" width="700"
-        .actions= link_to image_tag('bt_convocar.png'), "#{current_user ? notify_path : '#actions'}"
+        .actions
+          - if current_user
+            = link_to image_tag('bt_convocar.png'), "#notify_modal", :rel => 'modal'
+          - else
+            = link_to image_tag('bt_convocar.png'), '#actions'
+        .hidden.notify
+          #notify_modal
+            p 
+              strong Tem certeza de que você quer dar um alerta? 
+              | O alerta só deve ser usado se a escola estiver em perigo, ou seja: se chegarem tratores para a demolição. Quando o Meu Rio recebe um alerta, nossa equipe vai até a escola averiguar o que está acontecendo, e manda um sms para todos os guardiões se for necessário formar uma barreira humana na frente da escola. Então, só mande o alerta se for um caso de perigo mesmo!
+            p Para continuar e enviar seu alerta #{link_to "clique aqui", notify_path}
+            p Para cancelar essa ação e voltar para a página anterior, #{link_to "clique aqui", root_path}
         span.info
           |Ao apertar o botão, o Meu Rio vai correr pra checar a informação. 
         span.info
