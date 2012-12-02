@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.find_by_email(params[:user][:email]) || User.create(params[:user])
+    @user = User.find_by_email(params[:user][:email]) || User.create!(params[:user])
     self.current_user = @user
     create!
   end
