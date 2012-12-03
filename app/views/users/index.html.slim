@@ -16,7 +16,7 @@
           h2 
             | Obrigado por participar, #{current_user.name}!
           p.congrats
-            | Compartilhe para que mais pessoas se alistem também!
+            | Nós registramos seu número de celular e enviaremos um SMS para você caso cheguem tratores para demolir a escola. Nossa corrente humana vai parar a demolição! Agora, traga mais guardiões para a liga compartilhando essa página no Facebook e no Twitter.
           = render 'share'
         - else
           = link_to image_tag('bt_fb.png'), '#new_fb', class: 'show_form show_fb_form', rel: 'modal'
