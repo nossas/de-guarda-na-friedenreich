@@ -6,11 +6,11 @@
           span= User.count.to_s.rjust(3, '0') 
         h3 Guardiões em alerta
         h1
-          | Os pais e alunos da Escola Municipal Friedenreich precisam de você para manter a escola de pé!
+          |graças a milhares de cariocas a escola municipal friedenreich ficará de pé em 2013.
         p
-          | O Governo e a Prefeitura do Rio querem derrubar a Escola Municipal Friedenreich a qualquer custo e ainda não deram aos pais nenhuma garantia legal de que seus filhos poderão continuar na escola com segurança. 
+          | O Governo e a Prefeitura do Rio queriam derrubar a Escola Municipal Friedenreich a qualquer custo e não haviam dado aos pais nenhuma garantia legal de que seus filhos poderão continuar na escola com segurança.
         p
-          | Vamos formar uma legião de guardiões para proteger a Friedenreich ao primeiro sinal de demolição.
+          | Graças a nossa mobilização a Secretária Municipal de Educação garantiu a permanência da Escola em 2013. Aliste-se abaixo pra ser avisado caso alguma coisa mude.
       .actions#actions
         - if current_user
           h2 
@@ -64,10 +64,10 @@
       h2
         | Friedenreich: Vigilância 24h
       p
-        | Montamos uma base que traz imagens da escola em tempo real, 24 horas por dia, 7 dias por semana. Acesse esta página sempre que tiver um tempo livre e se você notar algo suspeito, aperte o botão abaixo e alerte os guardiões da Friedenreich.
+        | Montamos uma base que traz imagens da escola em tempo real, 24 horas por dia, 7 dias por semana. Caso a escola volte a estar ameaçada de demolição avisaremos por SMS e voltaremos a transmitir ao vivo.
     .kids
       .video
-        iframe src="http://cdn.livestream.com/embed/meurio?layout=4&amp;height=400&amp;width=700&amp;autoplay=false" height="400" width="700"
+        = image_tag "video_placeholder.png" 
         .actions
           - if current_user
             = link_to image_tag('bt_convocar.png'), "#notify_modal", :rel => 'modal'
@@ -91,7 +91,10 @@
       h2 
         | Este é o nosso muro de guardiões
       p
-        | Estamos de prontidão! Se a Prefeitura e o Governo resolverem demolir a Friedenreich sem aviso prévio, o Meu Rio enviará um SMS para todos os guardiões convocando-os para uma mobilização na própria escola. Nenhum trator se aproximará da escola enquanto o Governo e a Prefeitura não garantirem legalmente um destino adequado para os alunos da Friedenreich. 
+        | Estamos de prontidão! Se a Prefeitura e o Governo resolverem demolir a Friedenreich mesmo com a promessa de manter a escola de pé em 2013, o Meu Rio enviará um SMS para todos os guardiões convocando-os para uma mobilização. 
+      p &nbsp;
+      p
+        | Nenhum trator se aproximará da escola enquanto pais, alunos  e professores não participarem de verdade do processo de decisão do futuro da escola!
     .users
       ul
         - @users.each_with_index do |user, index|
